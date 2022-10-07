@@ -1,0 +1,98 @@
+.bio {
+    overflow: hidden;
+}
+
+.parallax_scene_1 {
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+}
+
+.parallax_scene_1 span {color: rgb(45, 255, 220); overflow: hidden;}
+
+.bg_1 {
+    background-size: cover;
+    background-image: url('/site-bg-1.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 100%;
+    height: 500px;
+}
+
+.cover {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    clip-path: polygon(20% 0, 20% 80%, 100% 80%, 100% 100%, 0 100%, 0 0);
+    background: black;
+}
+
+.cover_gradient {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-image: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(0, 0, 0, 0.9) 85%);
+}
+
+.plate_1 {
+    width: 1500px;
+    height: 1500px;
+    background: rgba(0, 0, 0, 0);
+    position: absolute;
+    top: -500px;
+    right: -1000px;
+    z-index: 2;
+    transform: rotate(45deg);
+    border: 5px solid rgba(0, 255, 149, 0.4);
+}
+
+.plate_2 {
+    width: 1500px;
+    height: 1500px;
+    background: rgba(0, 0, 0, 0);
+    position: absolute;
+    top: -500px;
+    right: -1400px;
+    z-index: 2;
+    transform: rotate(45deg);
+    border: 5px solid rgba(0, 255, 149, 0.4);
+}
+
+.parallax_scene_1 h1 {
+    position: absolute;
+    bottom: 100px;
+    font-size: 4rem;
+    z-index: 5;
+    width: 100%;
+    padding: 0 4rem;
+    text-align: right;
+}
+
+.name_logo_plate {
+    height: 678px;
+    width: 1299px;
+    position: absolute;
+    top: 100px;
+    left: -150px;
+    z-index: 4;
+    filter: brightness(0.2) sepia(1) hue-rotate(250deg) saturate(6) opacity(0.5);
+}
+
+.container_main {
+    margin: 300px 2rem 0 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.sec_1 {
+    padding: 50px 0;
+}
+
+.portrait {
+    height: auto;
+    width: 100%;
+}

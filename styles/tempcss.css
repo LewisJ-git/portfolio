@@ -1,0 +1,15 @@
+.hero {
+    overflow-y: hidden;
+    position: absolute;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background-size: cover;
+    -webkit-clip-path: polygon(75% 80%, 75% 0, 100% 0, 100% 100%, 0 100%, 0 80%);
+    clip-path: polygon(75% 80%, 75% 0, 100% 0, 100% 100%, 0 100%, 0 80%);
+    /* -webkit-clip-path: polygon(0 0, 77% 0, 77% 80%, 0 80%);
+    clip-path: polygon(0 0, 77% 0, 77% 80%, 0 80%); */
+    align-items:flex-end;
+    z-index: 2;
+}
