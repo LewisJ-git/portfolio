@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import navbarStyles from '../styles/Navbar.module.css'
 import Link from 'next/link'
 
 const NavItem = ({ title, linkURL }) => {
@@ -11,12 +10,16 @@ const NavItem = ({ title, linkURL }) => {
         transition: { duration: 0.7, ease: [0, 1, 0, 1] }
     }
     return (
-        <div onMouseEnter={() => hoveredState(true)} onMouseLeave={() => hoveredState(false)}><Link href={linkURL}>{title}</Link>
+        <div
+            onMouseEnter={() => hoveredState(true)}
+            onMouseLeave={() => hoveredState(false)}
+        >
+            <Link href={linkURL}>{title}</Link>
             {hovered &&
-                <motion.div className={navbarStyles.dupes_container}>
-                    <motion.div initial={{ opacity: 0, translateY: -50 }} whileInView={fade} viewport={{ once: false }} className={navbarStyles.dupes}>{title}</motion.div>
-                    <motion.div initial={{ opacity: 0, translateY: -50 }} whileInView={fade} viewport={{ once: false }} className={navbarStyles.dupes}>{title}</motion.div>
-                    <motion.div initial={{ opacity: 0, translateY: -50 }} whileInView={fade} viewport={{ once: false }} className={navbarStyles.dupes}>{title}</motion.div>
+                <motion.div className='relative'>
+                    <motion.div initial={{ opacity: 0, translateY: -50 }} whileInView={fade} viewport={{ once: false }} className='absolute text-transparent text-stroke-white z-0 cursor-pointer select-none top-[-15px] 600:top-[-15px]'><Link href={linkURL}>{title}</Link></motion.div>
+                    <motion.div initial={{ opacity: 0, translateY: -50 }} whileInView={fade} viewport={{ once: false }} className='absolute text-transparent text-stroke-white z-0 cursor-pointer select-none top-[0px] 600:top-[-5px]'><Link href={linkURL}>{title}</Link></motion.div>
+                    <motion.div initial={{ opacity: 0, translateY: -50 }} whileInView={fade} viewport={{ once: false }} className='absolute text-transparent text-stroke-white z-0 cursor-pointer select-none top-[20px] 600:top-[10px]'><Link href={linkURL}>{title}</Link></motion.div>
                 </motion.div>
             }
         </div>
