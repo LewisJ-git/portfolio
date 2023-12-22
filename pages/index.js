@@ -1,8 +1,8 @@
 import Footer from "../components/Footer";
 import Header from "../components/Header";
-import HomeDeco from "../components/decos/HomeDeco";
-import Name from "../components/decos/Name";
-import NameDesc from "../components/decos/NameDesc";
+import HomeDeco from "../components/HomeDeco";
+import Name from "../components/Name";
+import NameDesc from "../components/NameDesc";
 
 export default function Home() {
 	return (

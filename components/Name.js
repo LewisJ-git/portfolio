@@ -5,7 +5,7 @@ import {
 	animate,
 	flicker_immediate,
 	flicker_fast,
-} from "../libs/Animations";
+} from "./libs/Animations";
 
 const Name = () => {
 	const firstName = "Long";

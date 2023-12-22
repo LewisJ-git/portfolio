@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { animate, bezier_curved } from "../libs/Animations";
+import { animate, bezier_curved } from "./libs/Animations";
 
 const NameDesc = () => {
 	const desc = ["Front-end developer", "UI/UX Designer", "Artist"];

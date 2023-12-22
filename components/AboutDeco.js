@@ -1,9 +1,8 @@
-import BackgroundImage from "./BackgroundImage";
-import nameLogo from "../../public/name-logo.svg";
-import BackgroundText from "./BackgroundText";
-import Diamond from "./Diamond";
-import Background from "./Background";
-import { animate_clip, bezier_curved } from "../libs/Animations";
+import BackgroundImage from "./decos/BackgroundImage";
+import nameLogo from "../public/name-logo.svg";
+import Diamond from "./decos/Diamond";
+import Background from "./decos/Background";
+import { animate_clip, bezier_curved } from "./libs/Animations";
 import { motion } from "framer-motion";
 
 const AboutDeco = () => {

@@ -1,7 +1,7 @@
-import Background from "./Background";
+import Background from "./decos/Background";
 import { motion } from "framer-motion";
-import { animate_clip, bezier_curved } from "../libs/Animations";
-import Name from "../svgs/Name";
+import { animate_clip, bezier_curved } from "./libs/Animations";
+import Name from "./svgs/Name";
 
 const Hello = () => {
 	return (

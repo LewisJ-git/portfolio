@@ -1,8 +1,8 @@
-import Background from "./Background";
+import Background from "./decos/Background";
 import { motion } from "framer-motion";
-import { animate_width, animate_clip, bezier_curved } from "../libs/Animations";
-import Diamond from "./Diamond";
-import AnimatedText from "./AnimatedText";
+import { animate_clip, bezier_curved } from "./libs/Animations";
+import Diamond from "./decos/Diamond";
+import AnimatedText from "./decos/AnimatedText";
 
 const Quotes = () => {
 	return (

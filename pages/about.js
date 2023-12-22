@@ -2,10 +2,9 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Image from "next/image";
 import Portrait from "../public/portrait.jpg";
-import AboutDeco from "../components/decos/AboutDeco";
-import Hello from "../components/decos/Hello";
-import Background from "../components/decos/Background";
-import Quotes from "../components/decos/Quotes";
+import AboutDeco from "../components/AboutDeco";
+import Hello from "../components/Hello";
+import Quotes from "../components/Quotes";
 
 export default function about() {
 	return (
@@ -26,11 +25,11 @@ export default function about() {
 								width={519}
 							/>
 						</span>
-						<section className="py-[50px]">
-							<h2>
+						<section className="py-[50px] text-3xl leading-relaxed ">
+							<p>
 								I&apos;m a computer science undergraduate at the
 								University of Houston.
-							</h2>
+							</p>
 
 							<p>
 								I love designing and developing web apps,
@@ -38,8 +37,22 @@ export default function about() {
 								passionate front-end developer, I really enjoy
 								exploring its&apos; ecosystem, spending time
 								discovering about the ever-expanding new
-								Javascript frameworks, learning web design
-								principles, or
+								Javascript frameworks, or learning web design
+								principles.
+							</p>
+
+							<p>
+								Art is a communication, a medium for story
+								telling. And I believe that websites are another
+								form of canvases that we can use to illustrate
+								our story, our vision to others. Moreover, I
+								love to create more complex, energetic, and
+								dynamic visuals that work seamlessly with user
+								interfaces to really enhance the user
+								experiences in websites. This makes websites
+								more engaging for user and thus, get users more
+								invested in our stories rather than a boring and
+								soulless UI.
 							</p>
 						</section>
 					</div>
