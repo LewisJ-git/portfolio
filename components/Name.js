@@ -12,7 +12,7 @@ const Name = () => {
 	const lastName = "Nguyen";
 
 	return (
-		<div className="m-0 text-[5rem] 600:text-[3.5rem] font-display font-medium grow-[3] shrink-0">
+		<div className="m-10 text-[5rem] 600:text-[3.5rem] font-display font-medium grow-[3] shrink-0">
 			<div className="m-0 leading-[3rem] relative z-[3]">
 				<motion.h1
 					variants={animate(

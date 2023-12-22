@@ -2,8 +2,8 @@ import Background from "./decos/Background";
 import BackgroundImage from "./decos/BackgroundImage";
 import Diamond from "./decos/Diamond";
 import BackgroundText from "./decos/BackgroundText";
-import nameLogo from "../../public/name-logo.svg";
-import statue1 from "../../public/statue-1.png";
+import nameLogo from "../public/name-logo.svg";
+import statue1 from "../public/statue-1.png";
 
 const HomeDeco = () => {
 	return (

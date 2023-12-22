@@ -5,7 +5,7 @@ const NameDesc = () => {
 	const desc = ["Front-end developer", "UI/UX Designer", "Artist"];
 
 	return (
-		<div className="relative leading-[6rem] text-[2rem] font-normal grow-0 shrink-[1] basis-auto text-right z-[10]">
+		<div className="relative leading-[6rem] text-[2rem] font-normal grow-0 shrink-[1] basis-auto text-right z-[10] m-10">
 			{Array.from(desc).map((text, index) => {
 				return (
 					<motion.p

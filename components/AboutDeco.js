@@ -32,12 +32,12 @@ const AboutDeco = () => {
 				borderColor="rgba(206, 255, 0, 0.8)"
 				mixBlendMode="color-dodge"
 			/>
-			<div className="h-[678px] w-[1299px] absolute top-[100px] left-[-150px] z-[6] filter hue-rotate-[-30deg]">
+			<div className="w-full absolute top-[100px] left-[-20vw] z-[6] filter hue-rotate-[-30deg] h-[80%] overflow-hidden">
 				<BackgroundImage
 					initialX={-400}
 					isSharp={false}
 					duration={1}
-					opacity={0.4}
+					opacity={0.2}
 					slowFlicker={true}
 					source={nameLogo}
 				/>
