@@ -28,11 +28,6 @@ export default function about() {
 						</span>
 						<section className="py-[50px]">
 							<h2>
-								<q>Art is a language without words.</q>
-								<br />
-								&#8212; Tsubasa Yamaguchi
-							</h2>
-							<h2>
 								I&apos;m a computer science undergraduate at the
 								University of Houston.
 							</h2>
@@ -42,9 +37,9 @@ export default function about() {
 								primarily working with Reactjs. And as a
 								passionate front-end developer, I really enjoy
 								exploring its&apos; ecosystem, spending time
-								learning new Javascript frameworks, or
-								discovering the development of web development
-								as a whole.
+								discovering about the ever-expanding new
+								Javascript frameworks, learning web design
+								principles, or
 							</p>
 						</section>
 					</div>
