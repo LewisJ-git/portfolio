@@ -2,7 +2,12 @@ import BackgroundImage from "./decos/BackgroundImage";
 import nameLogo from "../public/name-logo.svg";
 import Diamond from "./decos/Diamond";
 import Background from "./decos/Background";
-import { animate_clip, bezier_curved } from "./libs/Animations";
+import {
+	animate_clip,
+	bezier_sharp,
+	bezier_curved,
+	flicker_slow,
+} from "./libs/Animations";
 import { motion } from "framer-motion";
 
 const AboutDeco = () => {
@@ -15,8 +20,8 @@ const AboutDeco = () => {
 				right={0}
 				zIndex={2}
 				borderWidth={8}
-				duration={0.8}
-				isSharp={false}
+				transition={bezier_curved(0.8)}
+				opacity={flicker_slow(1)}
 				borderColor="rgb(16, 185, 129)"
 				mixBlendMode="color-dodge"
 			/>
@@ -26,19 +31,17 @@ const AboutDeco = () => {
 				top={-800}
 				right={-20}
 				zIndex={2}
-				isSharp={false}
+				transition={bezier_sharp(1.1)}
+				opacity={flicker_slow(1)}
 				borderWidth={8}
-				duration={1.1}
 				borderColor="rgba(206, 255, 0, 0.8)"
 				mixBlendMode="color-dodge"
 			/>
-			<div className="w-full absolute top-[100px] left-[-20vw] z-[6] filter hue-rotate-[-30deg] h-[80%] overflow-hidden">
+			<div className="w-full h-full absolute top-[125px] left-[-20vw] z-[6] filter hue-rotate-[-30deg] overflow-hidden">
 				<BackgroundImage
 					initialX={-400}
-					isSharp={false}
-					duration={1}
-					opacity={0.2}
-					slowFlicker={true}
+					transition={bezier_curved(1)}
+					opacity={flicker_slow(0.2)}
 					source={nameLogo}
 				/>
 			</div>

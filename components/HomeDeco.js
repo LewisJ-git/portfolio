@@ -3,45 +3,37 @@ import BackgroundImage from "./decos/BackgroundImage";
 import Diamond from "./decos/Diamond";
 import BackgroundText from "./decos/BackgroundText";
 import nameLogo from "../public/name-logo.svg";
-import statue1 from "../public/statue-1.png";
+import {
+	bezier_curved,
+	bezier_sharp,
+	flicker_fast,
+	flicker_slow,
+} from "./libs/Animations";
 
 const HomeDeco = () => {
 	return (
 		<>
 			<Background src="/site-bg-1.png" />
 			<BackgroundImage
-				opacity={0.7}
-				fit="scale-down"
-				size="600px"
-				zIndex={2}
-				source={statue1}
-				left={-300}
-				top={100}
-			/>
-			<BackgroundImage
 				initialY={-300}
-				isSharp={false}
-				duration={1}
-				slowFlicker={true}
+				transition={bezier_curved(1)}
+				opacity={flicker_slow(0.4)}
 				rotate={90}
-				opacity={0.4}
 				source={nameLogo}
 			/>
 			<BackgroundText
-				isSharp={false}
-				duration={1}
+				transition={bezier_curved(1)}
 				rotate={-90}
 				slowFlicker={true}
 				text="ASTRA"
 				size={180}
-				opacity={0.25}
+				opacity={flicker_slow(0.25)}
 				bottom={140}
 				right={80}
 				initialX={-300}
 			/>
 			<BackgroundText
-				isSharp={false}
-				duration={1.2}
+				transition={bezier_curved(1.2)}
 				rotate={0}
 				text="AD"
 				size={160}
@@ -52,7 +44,8 @@ const HomeDeco = () => {
 			/>
 			<Diamond
 				initialX={-900}
-				duration={0.7}
+				transition={bezier_sharp(0.7)}
+				opacity={flicker_fast(1)}
 				size={1500}
 				backgroundColor="rgb(0, 0, 0)"
 				top={-200}
@@ -61,7 +54,8 @@ const HomeDeco = () => {
 			/>
 			<Diamond
 				initialY={-300}
-				duration={1}
+				transition={bezier_sharp(1)}
+				opacity={flicker_slow(1)}
 				size={1500}
 				top={-1200}
 				right={-350}
@@ -70,18 +64,19 @@ const HomeDeco = () => {
 			/>
 			<Diamond
 				initialY={-300}
-				duration={1.2}
+				transition={bezier_curved(1.2)}
+				opacity={flicker_fast(1)}
 				size={1500}
 				top={-1400}
 				right={-350}
-				isSharp={false}
 				borderWidth={8}
 				borderColor="rgba(251, 146, 60, 0.4)"
 				zIndex={1}
 			/>
 			<Diamond
 				initialX={1900}
-				duration={0.8}
+				transition={bezier_sharp(0.8)}
+				opacity={flicker_slow(1)}
 				size={650}
 				top={-100}
 				right={-230}
@@ -90,7 +85,8 @@ const HomeDeco = () => {
 			<Diamond
 				initialX={-300}
 				size={400}
-				duration={1}
+				transition={bezier_sharp(1)}
+				opacity={flicker_fast(1)}
 				top={200}
 				zIndex={1}
 				borderWidth={8}
@@ -99,8 +95,8 @@ const HomeDeco = () => {
 			<Diamond
 				initialY={300}
 				size={600}
-				isSharp={false}
-				duration={1}
+				transition={bezier_curved(1)}
+				opacity={flicker_fast(1)}
 				top={400}
 				left={450}
 				zIndex={1}

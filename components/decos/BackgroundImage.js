@@ -1,25 +1,15 @@
 import { motion } from "framer-motion";
-import {
-	bezier_sharp,
-	bezier_curved,
-	animate,
-	flicker_fast,
-	flicker_slow,
-} from "../libs/Animations";
+import { animate } from "../libs/Animations";
 import Image from "next/image";
 
 const BackgroundImage = ({
 	initialX = 0,
 	initialY = 0,
-	isSharp = true,
-	duration = 0,
-	slowFlicker = false,
+	transition,
 	rotate = 0,
 	opacity,
 	zIndex,
 	source,
-	fit = "cover",
-	size = "100vw",
 	top = null,
 	left = null,
 	right = null,
@@ -27,16 +17,11 @@ const BackgroundImage = ({
 }) => {
 	return (
 		<motion.div
-			variants={animate(
-				initialX,
-				initialY,
-				slowFlicker ? flicker_slow : flicker_fast,
-				rotate,
-				isSharp ? bezier_sharp(duration) : bezier_curved(duration)
-			)}
+			variants={animate(initialX, initialY, opacity, rotate, transition)}
 			initial="initial"
-			animate="animate"
+			whileInView="animate"
 			exit="exit"
+			viewport={{ once: true }}
 			style={{
 				top,
 				left,
@@ -44,16 +29,9 @@ const BackgroundImage = ({
 				bottom,
 				zIndex,
 				transform: `rotate(${rotate})`,
-				filter: `opacity(${opacity})`,
 			}}
 			className="w-full h-full fixed left-0 top-0">
-			<Image
-				src={source}
-				alt="bgimg"
-				layout="fill"
-				objectFit={fit}
-				sizes={size}
-			/>
+			<Image src={source} alt="background-image" layout="fill" />
 		</motion.div>
 	);
 };

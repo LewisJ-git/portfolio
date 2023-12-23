@@ -12,9 +12,15 @@ const bezier_curved = (duration, delay = 0) => {
 		delay,
 	};
 };
-const flicker_fast = [0, 0.6, 0, 0.4, 0, 0.8, 0.1, 1];
-const flicker_slow = [0, 0.4, 0.6, 0.1, 0.7, 0, 0, 0.8, 0.4, 0.8, 1];
-const flicker_immediate = [0, 1];
+const flicker_fast = (endOpacity = 1) => {
+	return new Array(0, 0.6, 0, 0.4, 0, 0.8, 0.1, endOpacity);
+};
+const flicker_slow = (endOpacity = 1) => {
+	return new Array(0, 0.4, 0.6, 0.1, 0.7, 0, 0, 0.8, 0.4, 0.8, endOpacity);
+};
+const flicker_immediate = (endOpacity = 1) => {
+	return new Array(0, endOpacity);
+};
 const animate = (initialX, initialY, opacity, rotate, transition) => {
 	return {
 		initial: {

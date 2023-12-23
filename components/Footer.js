@@ -14,39 +14,44 @@ const Footer = () => {
 				whileInView="animate"
 				exit="exit"
 				viewport={{ once: true }}>
-				<a
-					href="https://vercel.com/solutions/nextjs"
-					target="_blank"
-					rel="noopener noreferrer"
-					className="flex flex-grow items-center justify-center">
+				<div className="flex flex-grow items-center justify-center">
 					<p className="text-[0.9rem]">Made with </p>
-					<span>
+					<a
+						href="https://vercel.com/solutions/nextjs"
+						target="_blank"
+						rel="noopener noreferrer">
 						<Image
 							src={nextLogo}
 							alt="Next.js Logo"
 							width={120}
 							height={60}
 						/>
-					</span>
-					<p className="text-[0.9rem]"> & </p>
-					<span className="px-2">
+					</a>
+					<p className="text-[0.9rem]">&ensp;&&ensp;</p>
+					<a
+						href="https://tailwindcss.com/"
+						target="_blank"
+						rel="noopener noreferrer">
 						<Image
 							src={tailwindLogo}
 							alt="Tailwind Logo"
 							width={160}
 							height={20}
 						/>
-					</span>
-					<p className="text-[0.9rem]"> & </p>
-					<span className="mx-[-10px]">
+					</a>
+					<p className="text-[0.9rem]">&ensp;&&ensp;</p>
+					<a
+						href="https://www.framer.com/motion/"
+						target="_blank"
+						rel="noopener noreferrer">
 						<Image
 							src={framerLogo}
 							alt="Framer Motion Logo"
 							width={160}
 							height={80}
 						/>
-					</span>
-				</a>
+					</a>
+				</div>
 			</motion.div>
 		</footer>
 	);

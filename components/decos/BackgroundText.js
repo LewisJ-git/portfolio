@@ -1,11 +1,5 @@
 import { motion } from "framer-motion";
-import {
-	bezier_sharp,
-	bezier_curved,
-	animate,
-	flicker_slow,
-	flicker_fast,
-} from "../libs/Animations";
+import { animate } from "../libs/Animations";
 
 const BackgroundText = ({
 	text = "",
@@ -13,11 +7,9 @@ const BackgroundText = ({
 	rotate = 0,
 	initialX = 0,
 	initialY = 0,
-	isSharp = "true",
-	duration = 0,
+	transition,
+	opacity,
 	zIndex = 0,
-	slowFlicker = false,
-	opacity = 1,
 	top = null,
 	left = null,
 	right = null,
@@ -25,20 +17,14 @@ const BackgroundText = ({
 }) => {
 	return (
 		<motion.h1
-			variants={animate(
-				initialX,
-				initialY,
-				slowFlicker ? flicker_slow : flicker_fast,
-				rotate,
-				isSharp ? bezier_sharp(duration) : bezier_curved(duration)
-			)}
+			variants={animate(initialX, initialY, opacity, rotate, transition)}
 			initial="initial"
-			animate="animate"
+			whileInView="animate"
 			exit="exit"
+			viewport={{ once: true }}
 			style={{
 				fontSize: `${size}px`,
 				zIndex,
-				filter: `opacity(${opacity})`,
 				transform: `rotate(${rotate})`,
 				top,
 				left,
