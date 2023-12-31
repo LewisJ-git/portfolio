@@ -44,6 +44,23 @@ const animate = (initialX, initialY, opacity, rotate, transition) => {
 		},
 	};
 };
+const animate_size = (width, height, transition) => {
+	return {
+		initial: {
+			width: 0,
+			height: 0,
+		},
+		animate: {
+			width,
+			height,
+			transition,
+		},
+		exit: {
+			width: 0,
+			height: 0,
+		},
+	};
+};
 const animate_clip = (initialPath = "", finalPath = "", transition) => {
 	return {
 		initial: {
@@ -100,6 +117,7 @@ export {
 	flicker_slow,
 	flicker_immediate,
 	animate,
+	animate_size,
 	animate_clip,
 	animate_path,
 	animate_path_stroke,

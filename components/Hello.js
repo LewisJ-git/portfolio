@@ -1,7 +1,7 @@
 import Background from "./decos/Background";
-import { motion } from "framer-motion";
-import { animate_clip, bezier_curved } from "./libs/Animations";
+import { bezier_curved } from "./libs/Animations";
 import Name from "./svgs/Name";
+import AnimatedMask from "./decos/AnimatedMask";
 
 const Hello = () => {
 	return (
@@ -13,16 +13,11 @@ const Hello = () => {
 					<Name />
 				</div>
 			</h1>
-			<motion.div
-				variants={animate_clip(
-					"polygon(100% 0, 100% 80%, 100% 80%, 100% 100%, 0 100%, 0 0)",
-					"polygon(20% 0, 20% 80%, 100% 80%, 100% 100%, 0 100%, 0 0)",
-					bezier_curved(0.8)
-				)}
-				initial="initial"
-				animate="animate"
-				exit="exit"
-				className="absolute bottom-0 w-full h-full z-[6] bg-black"
+			<AnimatedMask
+				startMask="polygon(100% 0, 100% 80%, 100% 80%, 100% 100%, 0 100%, 0 0)"
+				endMask="polygon(20% 0, 20% 80%, 100% 80%, 100% 100%, 0 100%, 0 0)"
+				classname="absolute bottom-0 w-full h-full z-[6] bg-black"
+				transition={bezier_curved(0.8)}
 			/>
 			<div className="absolute bottom-0 w-full h-full z-[1] bg-gradient-to-t from-black to-transparent" />
 		</div>

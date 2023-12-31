@@ -16,7 +16,7 @@ const Diamond = ({
 	borderWidth = 0,
 	borderColor = "rgba(0, 0, 0, 0)",
 	backgroundColor = "rgba(0, 0, 0, 0)",
-	mixBlendMode = "",
+	mixBlendMode,
 }) => {
 	return (
 		<motion.div

@@ -7,7 +7,7 @@ const NavBar = () => {
 	const navigations = [
 		{ title: "Home", url: "/" },
 		{ title: "About", url: "/about" },
-		{ title: "Résumé", url: "/resume" },
+		{ title: "Works", url: "/works" },
 		{ title: "Contact", url: "/contact" },
 	];
 	return (

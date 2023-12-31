@@ -9,23 +9,18 @@ import {
 } from "./libs/Animations";
 import ForegroundImage from "./decos/ForegroundImage";
 import { motion } from "framer-motion";
+import AnimatedContainer from "./decos/AnimatedContainer";
 
 const Portrait = () => {
 	return (
 		<span className="h-auto w-full flex justify-center content-center flex-col items-center">
 			<div className="relative">
-				<motion.div
-					variants={animate(
-						100,
-						-100,
-						flicker_fast(0.4),
-						0,
-						bezier_sharp(0.8, 0.9)
-					)}
-					whileInView="animate"
-					initial="initial"
-					viewport={{ once: true }}
-					className="w-full h-full bg-gray-600 absolute bottom-[-40px] left-[-40px] z-[-2]"
+				<AnimatedContainer
+					initialX={100}
+					initialY={-100}
+					opacity={flicker_fast(0.4)}
+					transition={bezier_sharp(0.8, 0.9)}
+					classname="w-full h-full bg-gray-600 absolute bottom-[-40px] left-[-40px] z-[-2]"
 				/>
 				<ForegroundImage
 					initialX={-100}

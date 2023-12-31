@@ -4,7 +4,6 @@ import AnimatedText from "./decos/AnimatedText";
 import {
 	bezier_curved,
 	bezier_sharp,
-	flicker_fast,
 	flicker_immediate,
 	flicker_slow,
 } from "./libs/Animations";
@@ -18,7 +17,7 @@ const Bio = () => {
 			<div className="p-10 flex flex-col content-between">
 				<div className="self-start w-[60%] m-5 p-5 relative">
 					<AnimatedText
-						text="I'm a computer science undergraduate at the University of Houston. And I love designing and developing web apps, primarily working with React.js."
+						text="I'm a Front-end developer and UI/UX designer. I specialize in coding and design web applications from scratch, covering a wide range from simple to complex designs."
 						duration={0.5}
 						delay={0.8}
 						initialY={100}
@@ -38,7 +37,7 @@ const Bio = () => {
 				</div>
 				<div className="self-end w-[60%] m-5 p-5 text-right relative">
 					<AnimatedText
-						text="As a passionate front-end developer, I really enjoy exploring its' ecosystem, spending time discovering about the ever-expanding new Javascript frameworks, or learning web design principles."
+						text="My forte lies in bringing visions to life, meticulously architecting and coding interfaces that resonate with both beauty and functionality."
 						duration={0.5}
 						delay={1}
 						initialY={-100}
@@ -72,7 +71,6 @@ const Bio = () => {
 					size={950}
 					bottom={-600}
 					right={-500}
-					zIndex={5}
 					borderWidth={32}
 					transition={bezier_curved(0.8, 1.4)}
 					opacity={flicker_slow(1)}

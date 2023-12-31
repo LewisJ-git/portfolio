@@ -2,13 +2,8 @@ import BackgroundImage from "./decos/BackgroundImage";
 import nameLogo from "../public/name-logo.svg";
 import Diamond from "./decos/Diamond";
 import Background from "./decos/Background";
-import {
-	animate_clip,
-	bezier_sharp,
-	bezier_curved,
-	flicker_slow,
-} from "./libs/Animations";
-import { motion } from "framer-motion";
+import { bezier_sharp, bezier_curved, flicker_slow } from "./libs/Animations";
+import AnimatedMask from "./decos/AnimatedMask";
 
 const AboutDeco = () => {
 	return (
@@ -22,7 +17,7 @@ const AboutDeco = () => {
 				borderWidth={8}
 				transition={bezier_curved(0.8)}
 				opacity={flicker_slow(1)}
-				borderColor="rgb(16, 185, 129)"
+				borderColor="rgb(157, 185, 16)"
 				mixBlendMode="color-dodge"
 			/>
 			<Diamond
@@ -47,31 +42,21 @@ const AboutDeco = () => {
 			</div>
 			<div className="filter hue-rotate-[-190deg] h-[125px] w-full brightness-75 relative">
 				<Background src="/site-bg-2.png" />
-				<motion.div
-					variants={animate_clip(
-						"polygon(100% 0, 100% 60%, 100% 60%, 100% 100%, 0 100%, 0 0)",
-						"polygon(40% 0, 40% 60%, 100% 60%, 100% 100%, 0 100%, 0 0)",
-						bezier_curved(1, 0.4)
-					)}
-					initial="initial"
-					animate="animate"
-					exit="exit"
-					className="absolute bottom-0 w-full h-[125px] z-[6] bg-black"
+				<AnimatedMask
+					startMask="polygon(100% 0, 100% 60%, 100% 60%, 100% 100%, 0 100%, 0 0)"
+					endMask="polygon(40% 0, 40% 60%, 100% 60%, 100% 100%, 0 100%, 0 0)"
+					classname="absolute bottom-0 w-full h-[127px] z-[6] bg-black"
+					transition={bezier_curved(1, 0.4)}
 				/>
 				<div className="absolute bottom-0 w-full h-full z-[1] bg-gradient-to-r from-black to-transparent" />
 			</div>
 			<div className="filter hue-rotate-[-80deg] h-[125px] w-full brightness-75 relative">
 				<Background src="/site-bg-2.png" />
-				<motion.div
-					variants={animate_clip(
-						"polygon(100% 0, 100% 60%, 100% 60%, 100% 100%, 0 100%, 0 0)",
-						"polygon(60% 0, 60% 60%, 100% 60%, 100% 100%, 0 100%, 0 0)",
-						bezier_curved(1, 0.4)
-					)}
-					initial="initial"
-					animate="animate"
-					exit="exit"
-					className="absolute bottom-0 w-full h-[125px] z-[6] bg-black"
+				<AnimatedMask
+					startMask="polygon(100% 0, 100% 60%, 100% 60%, 100% 100%, 0 100%, 0 0)"
+					endMask="polygon(60% 0, 60% 60%, 100% 60%, 100% 100%, 0 100%, 0 0)"
+					classname="absolute bottom-0 w-full h-[127px] z-[6] bg-black"
+					transition={bezier_curved(1, 0.4)}
 				/>
 				<div className="absolute bottom-0 w-full h-full z-[1] bg-gradient-to-l from-black to-transparent" />
 			</div>
