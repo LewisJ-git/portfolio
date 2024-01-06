@@ -35,11 +35,9 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# ignore temporary css files
-/temporary
-styles/temporary/bio.css
-styles/temporary/footer.css
-styles/temporary/home.css
-styles/temporary/navbar.css
-styles/temporary/tempcss.css
-.vscode/settings.json
+# vscode settings
+.vscode
+.prettierignore
+
+# temporary files
+/old
