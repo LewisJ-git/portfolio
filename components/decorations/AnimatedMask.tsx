@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { animate_clip } from "../libs/Animations";
 
 const AnimatedMask = ({
 	children,
@@ -7,19 +6,19 @@ const AnimatedMask = ({
 	startMask = "",
 	endMask = "",
 	parentClass = "",
-	childClass = "",
+	childClass = ""
 }) => {
 	return (
 		<div className={parentClass}>
 			{children}
-			<motion.div
+			{/* <motion.div
 				variants={animate_clip(startMask, endMask, transition)}
 				initial="initial"
 				whileInView="animate"
 				exit="exit"
 				viewport={{ once: true }}
 				className={childClass}
-			/>
+			/> */}
 		</div>
 	);
 };

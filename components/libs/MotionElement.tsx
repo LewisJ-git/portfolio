@@ -13,11 +13,11 @@ interface motionProp {
 const MotionElement = (props: motionProp) => {
 	const conditionalArgs = {
 		...(props.forceAnimate && { animate: "animate" }),
-		...(props.animateOnce && { viewport: { once: true } })
+		...(props.animateOnce && { viewport: { once: true } }),
+		...(props.key && { key: props.key })
 	};
 	return (
 		<motion.div
-			key={props.key}
 			variants={props.animation}
 			className={props.classname}
 			whileInView="animate"
