@@ -4,10 +4,7 @@ export default function Document() {
 	return (
 		<Html lang="en">
 			<Head>
-				<meta
-					name="description"
-					content="Long Nguyen's portfolio website"
-				/>
+				<meta name="description" content="Long Nguyen's portfolio website" />
 				<link
 					rel="apple-touch-icon"
 					sizes="180x180"
@@ -27,11 +24,7 @@ export default function Document() {
 				/>
 				<link rel="manifest" href="/site.webmanifest" />
 				<link rel="preconnect" href="https://fonts.googleapis.com" />
-				<link
-					rel="preconnect"
-					href="https://fonts.gstatic.com"
-					crossOrigin="true"
-				/>
+				<link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
 				<link
 					href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500&family=Rajdhani:wght@500;600&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
 					rel="stylesheet"
