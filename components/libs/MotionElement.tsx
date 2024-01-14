@@ -1,5 +1,5 @@
 import { motion, Variants } from "framer-motion";
-import { ReactNode } from "react";
+import { CSSProperties, ReactNode } from "react";
 
 interface motionProp {
 	children?: ReactNode;
@@ -7,14 +7,16 @@ interface motionProp {
 	classname?: string;
 	forceAnimate?: boolean;
 	animateOnce?: boolean;
-	key?: string;
+	keyName?: string;
+	style?: CSSProperties;
 }
 
 const MotionElement = (props: motionProp) => {
 	const conditionalArgs = {
 		...(props.forceAnimate && { animate: "animate" }),
 		...(props.animateOnce && { viewport: { once: true } }),
-		...(props.key && { key: props.key })
+		...(props.keyName && { key: props.keyName }),
+		...(props.style && { style: props.style })
 	};
 	return (
 		<motion.div

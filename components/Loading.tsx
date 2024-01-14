@@ -19,9 +19,9 @@ const Loading = (props: loadingInterface) => {
 	};
 	return (
 		<MotionElement
-			key="logo"
+			keyName="logo"
 			animation={new Animate(loadingAnimation).variant}
-			classname="fixed top-0 left-0 h-screen w-screen">
+			classname="fixed top-0 left-0 h-full w-full z-[20]">
 			<Logo fallbackFunc={setLoading} />
 		</MotionElement>
 	);

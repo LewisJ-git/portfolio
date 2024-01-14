@@ -48,7 +48,7 @@ const MotionSvg = (props: svgInterface) => {
 					</motion.linearGradient>
 				</motion.defs>
 			)}
-			<g fill="url(#gradient)">
+			<g fill="url(#gradient)" fillRule="evenodd">
 				{props.paths.split(/(?=M)/g).map((path, index) => {
 					return (
 						<motion.path

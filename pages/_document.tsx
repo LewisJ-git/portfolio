@@ -26,7 +26,7 @@ export default function Document() {
 				<link rel="preconnect" href="https://fonts.googleapis.com" />
 				<link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
 				<link
-					href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500&family=Rajdhani:wght@500;600&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
+					href="https://fonts.googleapis.com/css2?family=Geo&family=Iceberg&family=Libre+Barcode+128+Text&display=swap"
 					rel="stylesheet"
 				/>
 			</Head>

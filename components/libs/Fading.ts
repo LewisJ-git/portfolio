@@ -5,7 +5,7 @@ export interface fadeInterface {
 const randomOpacity = (): Array<number> => {
 	let arr: Array<number> = [];
 	for (let i = 0; i < 10; i++) {
-		arr.push(Math.random() * 10 < 9 ? 1 : 0.7);
+		arr.push(Math.random() * 20 < 18 ? 1 : 0.7);
 	}
 	return arr;
 };

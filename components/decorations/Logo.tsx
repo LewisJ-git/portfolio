@@ -17,9 +17,9 @@ const Logo = (props: logoInterface) => {
 			paths={LogoPath}
 			width={512}
 			height={512}
-			fill="#fff"
+			fill="#030301ff"
 			gradTransition={new Transitions(1, bezierCurved, 0.8).transition}
-			stroke="#ffffffff"
+			stroke="#030301ff"
 			strokeWidth={2}
 			aspectRatio="xMidYMid meet"
 			animation={new Animate(animateLogo).variant}

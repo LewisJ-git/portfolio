@@ -41,3 +41,5 @@ next-env.d.ts
 
 # temporary files
 /old
+public/fonts/ncof005_badfennec_font/badfennec.jpg
+public/fonts/ncof003_hrdtkn_ver1_20/hrdtkn_ver1_20.jpg
