@@ -14,6 +14,7 @@ export interface svgInterface {
 	stroke?: string;
 	strokeLinecap?: "inherit" | "round" | "butt" | "square";
 	strokeWidth?: number;
+	transform?: string;
 	onCompleteFallback?: () => void;
 }
 
@@ -39,7 +40,7 @@ const MotionSvg = (props: svgInterface) => {
 						<motion.stop
 							transition={props.gradTransition}
 							animate={{
-								stopColor: ["#00000000", `${props.fill}`]
+								stopColor: ["#00000000", props.fill]
 							}}
 							{...(props.onCompleteFallback && {
 								onAnimationComplete: props.onCompleteFallback
@@ -48,7 +49,7 @@ const MotionSvg = (props: svgInterface) => {
 					</motion.linearGradient>
 				</motion.defs>
 			)}
-			<g fill="url(#gradient)" fillRule="evenodd">
+			<g fill="url(#gradient)" {...(props.transform && { transform: props.transform })}>
 				{props.paths.split(/(?=M)/g).map((path, index) => {
 					return (
 						<motion.path

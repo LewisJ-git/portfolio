@@ -20,13 +20,10 @@ module.exports = {
 			}
 		},
 		colors: {
-			text: "#030301ff",
+			cblack: "#030301ff",
 			background: "#eddcc6ff",
-			midground_light: "#7e775fff",
 			midground: "#485768ff",
-			midground_dark: "#4a4136ff",
 			accent2: "#ff4365ff",
-
 			accent1: "#00d9c0ff"
 		}
 	},

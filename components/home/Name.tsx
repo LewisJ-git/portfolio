@@ -3,9 +3,7 @@ import { Fading } from "../libs/Fading";
 import MotionElement from "../libs/MotionElement";
 import { Transitions, bezierSharp } from "../libs/Transitions";
 import AfterImage from "./AfterImage";
-import ContainerArt from "../../public/assets/images/bitmap.svg";
 import MaskElement from "../libs/MaskElement";
-import Image from "next/image";
 
 function Home() {
 	const animateName = (initialX: number, i: number): animateParam => {
@@ -16,18 +14,17 @@ function Home() {
 		};
 	};
 	return (
-		<div className="w-full flex flex-row flex-wrap p-10 md:p-[2rem] md:gap-[8rem] gap-[5rem] text-4xl md:text-6xl font-display rotate-[-15deg]">
+		<div className="w-full flex flex-row flex-wrap p-10 md:p-[2rem] md:gap-[8rem] gap-[5rem] text-4xl md:text-6xl font-badfennec rotate-[-15deg]">
 			<MotionElement
 				animation={new Animate(animateName(-200, 0)).variant}
 				classname="place-self-start relative md:leading-[3.5rem] leading-[2.5rem] text-accent2 "
 				forceAnimate={true}
 				animateOnce={true}>
-				<div
-					className="absolute bg-midground w-[400px] h-[250px] left-[-150px] top-[-50px] md:w-[600px] md:h-[400px] md:left-[-200px] md:top-[-90px]"
-					style={{
-						clipPath:
-							"polygon(95% 93%, 95% 40%, 100% 35%, 100% 0%, 0% 0%, 0% 100%, 88% 100%)"
-					}}
+				<MaskElement
+					childClass="absolute bg-midground w-[400px] h-[250px] left-[-150px] top-[-50px] md:w-[600px] md:h-[400px] md:left-[-200px] md:top-[-95px]"
+					startMask="polygon(95% 0%, 95% 0%, 100% 0%, 100% 0%, 0% 0%, 0% 0%, 88% 0%)"
+					endMask="polygon(95% 93%, 95% 40%, 100% 35%, 100% 0%, 0% 0%, 0% 100%, 88% 100%)"
+					transition={new Transitions(0.7, bezierSharp, 1).transition}
 				/>
 				<h1 className="relative z-[2] text-accent2">LONG</h1>
 				<AfterImage amount={3} text="LONG" />

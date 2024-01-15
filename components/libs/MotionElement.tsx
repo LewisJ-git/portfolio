@@ -1,4 +1,4 @@
-import { motion, Variants } from "framer-motion";
+import { motion, TargetAndTransition, Variants } from "framer-motion";
 import { CSSProperties, ReactNode } from "react";
 
 interface motionProp {
@@ -9,6 +9,7 @@ interface motionProp {
 	animateOnce?: boolean;
 	keyName?: string;
 	style?: CSSProperties;
+	onHover?: TargetAndTransition;
 }
 
 const MotionElement = (props: motionProp) => {
@@ -16,7 +17,8 @@ const MotionElement = (props: motionProp) => {
 		...(props.forceAnimate && { animate: "animate" }),
 		...(props.animateOnce && { viewport: { once: true } }),
 		...(props.keyName && { key: props.keyName }),
-		...(props.style && { style: props.style })
+		...(props.style && { style: props.style }),
+		...(props.onHover && { whileHover: props.onHover })
 	};
 	return (
 		<motion.div

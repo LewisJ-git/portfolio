@@ -1,21 +1,22 @@
 import { Transition } from "framer-motion";
-import { ReactNode } from "react";
+import { CSSProperties, ReactNode } from "react";
 import MotionElement from "./MotionElement";
 import { Animate } from "./Animations";
 
 interface maskInterface {
-	children: ReactNode;
 	startMask: string;
 	endMask: string;
+	children?: ReactNode;
 	transition: Transition;
 	childClass?: string;
 	parentClass?: string;
 	filterClass?: string;
+	childStyle?: CSSProperties;
 }
 
 const MaskElement = (props: maskInterface) => {
 	return (
-		<div className={props.parentClass}>
+		<div {...(props.parentClass && { className: props.parentClass })}>
 			{props.children}
 			<MotionElement
 				animation={
@@ -26,6 +27,7 @@ const MaskElement = (props: maskInterface) => {
 					}).variant
 				}
 				classname={props.childClass}
+				style={props.childStyle}
 			/>
 			{props.filterClass ? <div className={props.filterClass} /> : <></>}
 		</div>

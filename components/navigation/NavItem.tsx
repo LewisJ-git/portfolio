@@ -1,13 +1,14 @@
 import Link from "next/link";
 import MotionElement from "../libs/MotionElement";
 import { ReactNode } from "react";
-import { Variants } from "framer-motion";
+import { TargetAndTransition, Variants } from "framer-motion";
 
 interface navItemProp {
 	children: ReactNode;
 	classname: string;
 	link: string;
 	animation: Variants;
+	onHover: TargetAndTransition;
 }
 
 const NavItem = (props: navItemProp) => {
@@ -16,7 +17,8 @@ const NavItem = (props: navItemProp) => {
 			animation={props.animation}
 			classname={props.classname}
 			forceAnimate={true}
-			animateOnce={true}>
+			animateOnce={true}
+			onHover={props.onHover}>
 			<Link href={props.link}>{props.children}</Link>
 		</MotionElement>
 	);

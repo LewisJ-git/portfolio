@@ -32,7 +32,7 @@ function MyApp({ Component, pageProps, router }) {
 	}, [router]);
 	return (
 		<AnimatePresence mode="wait">
-			<Layout pageLoad={pageLoading} classname={`${hrdtkn.className} ${badfennec.className}`}>
+			<Layout pageLoad={pageLoading} classname={`${hrdtkn.variable} ${badfennec.variable}`}>
 				<Component {...pageProps} key={router.asPath} />
 			</Layout>
 		</AnimatePresence>
