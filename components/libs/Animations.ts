@@ -5,7 +5,7 @@ export interface animateParam {
 	transition?: Transition;
 	initialX?: number;
 	initialY?: number;
-	width?: number;
+	width?: number | string;
 	height?: number;
 	initialClip?: string;
 	finalClip?: string;

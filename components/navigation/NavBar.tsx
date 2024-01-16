@@ -65,8 +65,11 @@ const NavBar = () => {
 						transition={new Transitions(3.2, bezierCurved, 1.4).staggerChildren(
 							0.2,
 							index
-						)}
-					/>
+						)}>
+						<div className="absolute font-barcode text-background z-[5] pl-[20px]">
+							{item.desc}
+						</div>
+					</MaskElement>
 				</MotionElement>
 			))}
 		</div>
@@ -74,4 +77,3 @@ const NavBar = () => {
 };
 
 export default NavBar;
-//style={{ paddingLeft: index * 40 }}

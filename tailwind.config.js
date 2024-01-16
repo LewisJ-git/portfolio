@@ -10,10 +10,11 @@ module.exports = {
 			fontFamily: {
 				hrdtkn: ["var(--font-hrdtkn)"],
 				badfennec: ["var(--font-badfennec)"],
-				sans: ["var(--font-badfennec)", "Geo", "sans-serif"],
+				barcode: ["'Libre Barcode 128 Text'"],
+				sans: ["Geo", "sans-serif"],
 				serif: ["ui-serif"],
-				mono: ["Libre Barcode 128 Text", "monospace"],
-				display: ["var(--font-hrdtkn)", "Iceberg", "cursive"]
+				mono: ["monospace"],
+				display: ["Iceberg", "cursive"]
 			},
 			gridTemplateColumns: {
 				layout1: "500px 500px"

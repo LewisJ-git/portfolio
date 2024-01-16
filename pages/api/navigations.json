@@ -1,6 +1,6 @@
 [
-	{"name": "Home", "url": "/"},
-	{"name": "About", "url": "/about"},
-	{"name": "Works", "url": "/works"},
-	{"name": "Contact", "url": "/contact"}
+	{ "name": "Home", "url": "/", "desc": "To the homepage" },
+	{ "name": "About", "url": "/about", "desc": "Career start, missions, and goals" },
+	{ "name": "Works", "url": "/works", "desc": "Previous works and experiences" },
+	{ "name": "Contact", "url": "/contact", "desc": "Contact information and social medias" }
 ]
