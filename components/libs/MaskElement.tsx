@@ -28,6 +28,8 @@ const MaskElement = (props: maskInterface) => {
 				}
 				classname={props.childClass}
 				style={props.childStyle}
+				forceAnimate={true}
+				animateOnce={true}
 			/>
 			{props.filterClass ? <div className={props.filterClass} /> : <></>}
 		</div>

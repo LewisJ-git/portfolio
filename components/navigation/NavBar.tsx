@@ -19,12 +19,7 @@ const NavBar = () => {
 	return (
 		<div className="flex flex-col gap-[0px] md:gap-3 p-[15px] mt-[10px] md:mt-[30px] relative z-[10] w-full text-2xl md:text-4xl font-hrdtkn rotate-[-15deg] md:translate-y-[-50%] translate-y-[-10%]">
 			{Navigations.map((item, index) => (
-				<MotionElement
-					key={index}
-					classname="w-full flex flex-row gap-2 items-center"
-					animation={new Animate(animateChild(index)).variant}
-					forceAnimate={true}
-					animateOnce={true}>
+				<div key={index} className="w-full flex flex-row gap-2 items-center">
 					<MaskElement
 						childStyle={
 							{
@@ -50,12 +45,7 @@ const NavBar = () => {
 							paddingRight: 20,
 							color: "#ff4365ff"
 						}}
-						animation={
-							new Animate({
-								opacity: new Fading(1, "random").opacity,
-								transition: new Transitions(60, bezierSharp).playInf("reverse")
-							}).variant
-						}>
+						animation={new Animate(animateChild(index)).variant}>
 						{item.name}
 					</NavItem>
 					<MaskElement
@@ -70,7 +60,7 @@ const NavBar = () => {
 							{item.desc}
 						</div>
 					</MaskElement>
-				</MotionElement>
+				</div>
 			))}
 		</div>
 	);

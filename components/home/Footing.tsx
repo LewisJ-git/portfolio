@@ -10,7 +10,7 @@ import linkedin_logo from "../../public/assets/icons/others/linkedin-logo.svg";
 const Footing = () => {
 	return (
 		<MaskElement
-			parentClass="fixed right-[-50px] bottom-[-30px] rotate-[-15deg] z-[10]"
+			parentClass="absolute right-[-50px] bottom-[-30px] rotate-[-15deg] z-[10]"
 			childClass="bg-midground w-[250px] h-[200px]"
 			startMask="polygon(100% 74%, 100% 100%, 100% 100%, 100% 15%, 100% 0%, 100% 0%, 100% 29.21%, 100% 34.65%, 100% 67.31%)"
 			endMask="polygon(0% 74%, 0% 100%, 100% 100%, 100% 8%, 92% 0%, 0% 0%, 0% 29.21%, 7.69% 34.65%, 7.69% 67.31%)"
