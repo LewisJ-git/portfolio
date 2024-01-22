@@ -4,7 +4,7 @@ import { Animate, animateParam } from "../libs/Animations";
 import { Transitions, bezierCurved } from "../libs/Transitions";
 
 interface logoInterface {
-	fallbackFunc: () => void;
+	fallbackFunc?: () => void;
 }
 
 const Logo = (props: logoInterface) => {

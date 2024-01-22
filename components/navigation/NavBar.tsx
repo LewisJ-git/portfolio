@@ -66,7 +66,7 @@ const NavBar = () => {
 							0.2,
 							index
 						)}>
-						<div className="absolute font-barcode text-background z-[5] pl-[20px]">
+						<div className="absolute font-barcode text-background z-[5] pl-[20px] whitespace-nowrap">
 							{item.desc}
 						</div>
 					</MaskElement>

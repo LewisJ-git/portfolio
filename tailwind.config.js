@@ -5,7 +5,8 @@ module.exports = {
 		extend: {
 			screens: {
 				600: { max: "600px" },
-				1025: { max: "1025px" }
+				1025: { max: "1025px" },
+				smheight: { raw: "(min-height: 667px)" }
 			},
 			fontFamily: {
 				hrdtkn: ["var(--font-hrdtkn)"],

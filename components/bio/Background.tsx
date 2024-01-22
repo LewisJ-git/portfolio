@@ -11,30 +11,6 @@ import Image from "next/image";
 const Background = () => {
 	return (
 		<>
-			<MotionElement
-				classname="w-[600px] absolute h-auto border-b-4 border-midground right-[-30px] opacity-60 rotate-[75deg] bottom-0 bg-background z-[1]"
-				forceAnimate={true}
-				animateOnce={true}
-				animation={
-					new Animate({
-						width: 600,
-						transition: new Transitions(1, bezierCurved, 1).transition
-					}).variant
-				}>
-				<div className="text-4xl py-2 pl-[50px] relative">Web Developer</div>
-			</MotionElement>
-			<MotionElement
-				classname="w-[800px] absolute h-auto border-b-4 border-midground right-[-200px] opacity-60 rotate-[75deg] top-[50px] bg-background z-[1]"
-				forceAnimate={true}
-				animateOnce={true}
-				animation={
-					new Animate({
-						width: 600,
-						transition: new Transitions(1, bezierCurved, 0.9).transition
-					}).variant
-				}>
-				<div className="text-4xl p-2 relative text-right">UI/UX Designer</div>
-			</MotionElement>
 			<Line
 				classname="w-[200px] absolute h-[3px] top-[100px] left-[-10px] bg-midground opacity-80 z-[1] rotate-[-15deg] mix-blend-exclusion"
 				delay={1.3}

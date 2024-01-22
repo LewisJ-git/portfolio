@@ -1,8 +1,10 @@
 import "../styles/globals.css";
 import Layout from "../components/Layout";
 import { AnimatePresence } from "framer-motion";
-import { useEffect, useState } from "react";
+import { Suspense } from "react";
 import localFont from "next/font/local";
+import Head from "next/head";
+import Loading from "../components/Loading";
 
 const hrdtkn = localFont({
 	src: "../public/fonts/ncof003_hrdtkn_ver1_20/hrdtkn_ver1_20.otf",
@@ -17,25 +19,18 @@ const badfennec = localFont({
 });
 
 function MyApp({ Component, pageProps, router }) {
-	const [pageLoading, setPageLoading] = useState<boolean>(false);
-	useEffect(() => {
-		const handleStart = () => {
-			setPageLoading(true);
-		};
-		const handleComplete = () => {
-			setPageLoading(false);
-		};
-
-		router.events.on("routeChangeStart", handleStart);
-		router.events.on("routeChangeComplete", handleComplete);
-		router.events.on("routeChangeError", handleComplete);
-	}, [router]);
 	return (
-		<AnimatePresence mode="wait">
-			<Layout pageLoad={pageLoading} classname={`${hrdtkn.variable} ${badfennec.variable}`}>
-				<Component {...pageProps} key={router.asPath} />
-			</Layout>
-		</AnimatePresence>
+		<>
+			<Head>
+				<title>Long Nguyen's portfolio website</title>
+			</Head>
+			<Suspense fallback={<Loading />}>
+				<Layout
+					classname={`${hrdtkn.variable} ${badfennec.variable} overflow-hidden relative h-screen w-full`}>
+					<Component {...pageProps} key={router.asPath} />
+				</Layout>
+			</Suspense>
+		</>
 	);
 }
 

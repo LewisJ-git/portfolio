@@ -1,7 +1,7 @@
 import { Animate, animateParam } from "../libs/Animations";
 import { Fading } from "../libs/Fading";
 import MotionElement from "../libs/MotionElement";
-import { Transitions, bezierSharp } from "../libs/Transitions";
+import { Transitions, bezierCurved, bezierSharp } from "../libs/Transitions";
 import AfterImage from "./AfterImage";
 import MaskElement from "../libs/MaskElement";
 import Line from "../decorations/Line";
@@ -22,11 +22,22 @@ function Home() {
 				forceAnimate={true}
 				animateOnce={true}>
 				<MaskElement
-					childClass="absolute bg-midground w-[400px] h-[250px] left-[-150px] top-[-50px] md:w-[600px] md:h-[400px] md:left-[-200px] md:top-[-95px] z-[5]"
+					parentClass="absolute left-[-150px] top-[-50px] md:left-[-200px] md:top-[-95px]"
+					childClass="bg-midground w-[400px] h-[250px] md:w-[600px] md:h-[400px] z-[5]"
 					startMask="polygon(95% 0%, 95% 0%, 100% 0%, 100% 0%, 0% 0%, 0% 0%, 88% 0%)"
 					endMask="polygon(95% 93%, 95% 40%, 100% 35%, 100% 0%, 0% 0%, 0% 100%, 88% 100%)"
-					transition={new Transitions(0.7, bezierSharp, 1).transition}
-				/>
+					transition={new Transitions(0.7, bezierSharp, 1).transition}>
+					<div className="font-barcode absolute text-background z-10 md:text-4xl text-2xl rotate-90 md:right-[-30px] md:top-[120px] right-[-20px] top-[110px]">
+						PER ARDUA AD ALTA
+					</div>
+					<MaskElement
+						parentClass="absolute md:left-[120px] left-[100px] bottom-[30px] z-[10]"
+						childClass="bg-background w-[200px] h-[150px] md:w-[300px] md:h-[200px] "
+						startMask="polygon(0% 100%, 0% 92.14%, 0% 92.14%, 0% 74.27%, 0% 0%, 0% 13.67%, 0% 79.27%, 0% 100%)"
+						endMask="polygon(100% 100%, 93.12% 92.14%, 24.16% 92.14%, 12.54% 74.27%, 12.54% 0%, 0% 13.67%, 0% 79.27%, 12.54% 100%)"
+						transition={new Transitions(0.8, bezierCurved, 1.3).transition}
+					/>
+				</MaskElement>
 				<h1 className="relative z-[11]">LONG</h1>
 				<AfterImage amount={3} text="LONG" />
 			</MotionElement>
