@@ -6,14 +6,15 @@ import Image from "next/image";
 import { Transitions, bezierCurved, bezierSharp } from "../libs/Transitions";
 import github_logo from "../../public/assets/icons/others/github_logo.svg";
 import linkedin_logo from "../../public/assets/icons/others/linkedin-logo.svg";
+import { circle, footingCard } from "../libs/Masks";
 
 const Footing = () => {
 	return (
 		<MaskElement
 			parentClass="absolute right-[-50px] bottom-[-30px] rotate-[-15deg] z-[10]"
 			childClass="bg-midground w-[250px] h-[200px]"
-			startMask="polygon(100% 74%, 100% 100%, 100% 100%, 100% 15%, 100% 0%, 100% 0%, 100% 29.21%, 100% 34.65%, 100% 67.31%)"
-			endMask="polygon(0% 74%, 0% 100%, 100% 100%, 100% 8%, 92% 0%, 0% 0%, 0% 29.21%, 7.69% 34.65%, 7.69% 67.31%)"
+			startMask={footingCard.start}
+			endMask={footingCard.end}
 			transition={new Transitions(0.7, bezierSharp, 1).transition}>
 			<MotionElement
 				animation={
@@ -43,8 +44,8 @@ const Footing = () => {
 			<MaskElement
 				parentClass="absolute z-[11] top-[50px] left-[70px] flex flex-row justify-center items-center"
 				childClass="h-[120px] w-[120px] bg-background absolute top-0 left-0"
-				startMask="circle(100% at 50% 50%)"
-				endMask="circle(0% at 50% 50%)"
+				startMask={circle.start}
+				endMask={circle.end}
 				transition={new Transitions(0.8, bezierCurved, 0.7).transition}>
 				<a href="https://linkedin.com/in/longnguyen2000" target="_blank">
 					<Image src={linkedin_logo} alt="linkedin logo" width={60} height={60} />

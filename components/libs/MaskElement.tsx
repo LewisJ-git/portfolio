@@ -12,6 +12,7 @@ interface maskInterface {
 	parentClass?: string;
 	filterClass?: string;
 	childStyle?: CSSProperties;
+	sharedLayout?: string;
 }
 
 const MaskElement = (props: maskInterface) => {
@@ -30,6 +31,7 @@ const MaskElement = (props: maskInterface) => {
 				style={props.childStyle}
 				forceAnimate={true}
 				animateOnce={true}
+				{...{ ...(props.sharedLayout && { layoutId: props.sharedLayout }) }}
 			/>
 			{props.filterClass ? <div className={props.filterClass} /> : <></>}
 		</div>

@@ -2,26 +2,41 @@ import Section from "../Section";
 import portrait from "../../public/assets/images/portrait.webp";
 import Image from "next/image";
 import MaskElement from "../libs/MaskElement";
-import { Transitions, bezierSharp } from "../libs/Transitions";
+import { Transitions, bezierCurved, bezierSharp } from "../libs/Transitions";
+import { bioCard } from "../libs/Masks";
+import BioNav from "../navigation/BioNav";
+import { useState } from "react";
+import BioNavigations from "../../pages/api/bio_navigations.json";
 
 const Intro = () => {
+	const [contentIndex, setContentIndex] = useState<number>(0);
 	return (
 		<Section>
-			<div className="relative mb-10 z-[10]">
-				<p className="text-background z-[11] relative pt-[30px] pb-[20px] mr-[-30px] pl-[30px] text-2xl md:text-3xl text-right">
-					I'm a Front-end developer and UI/UX designer. With a focus on crafting
-					sophisticated web applications, I specialize in working with various popular
-					frameworks and technologies.
-				</p>
-				<MaskElement
-					parentClass="absolute w-[120vw] h-full top-0 left-[-100px] z-[9]"
-					childClass="w-full h-full bg-midground"
-					startMask="polygon(0% 93.95%, 0% 100%, 0% 100%, 0% 93.95%, 0% 93.95%, 0% 0%, 0% 0%, 0% 7.56%, 0% 7.56%, 0% 0%, 0% 0%, 0% 7.56%)"
-					endMask="polygon(100% 93.95%, 98.08% 100%, 40% 100%, 38.79% 93.95%, 0% 93.95%, 0% 0%, 20% 0%, 21.51% 7.56%, 76.18% 7.56%, 77.75% 0%, 98.08% 0%, 100% 7.56%)"
-					transition={new Transitions(0.7, bezierSharp, 1).transition}
-				/>
+			<div className="relative flex flex-row w-full justify-end">
+				<div className="lg:w-1/2 w-full relative flex flex-col">
+					<div className="pl-10 pr-5 md:py-5 py-2 relative z-10">
+						<p className="text-background xs:text-xl text-2xl md:text-3xl text-right relative z-10">
+							{BioNavigations[contentIndex].content}
+						</p>
+						<MaskElement
+							parentClass="absolute w-[1700px] h-full top-0 left-0 z-[9]"
+							childClass="w-full h-full bg-midground"
+							startMask={bioCard.start}
+							endMask={bioCard.end}
+							transition={new Transitions(1, bezierCurved, 0.6).transition}
+						/>
+						<MaskElement
+							parentClass="absolute w-[500px] h-[50px] top-[50px] md:top-[30px] right-[-520px] z-[10]"
+							childClass="w-full h-full bg-background"
+							startMask={bioCard.start}
+							endMask={bioCard.end}
+							transition={new Transitions(1.2, bezierCurved, 1).transition}
+						/>
+					</div>
+					<BioNav contentIndex={contentIndex} setContentIndex={setContentIndex} />
+				</div>
 			</div>
-			<div className="relative right-0 bottom-0 w-full flex justify-end pr-5">
+			<div className="relative right-0 bottom-0 w-full flex justify-center pr-5">
 				<Image src={portrait} alt="portrait" width={319} height={449} />
 			</div>
 		</Section>

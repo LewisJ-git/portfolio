@@ -10,6 +10,8 @@ interface motionProp {
 	keyName?: string;
 	style?: CSSProperties;
 	onHover?: TargetAndTransition;
+	onClick?: any | undefined;
+	layoutID?: string;
 }
 
 const MotionElement = (props: motionProp) => {
@@ -18,7 +20,9 @@ const MotionElement = (props: motionProp) => {
 		...(props.animateOnce && { viewport: { once: true } }),
 		...(props.keyName && { key: props.keyName }),
 		...(props.style && { style: props.style }),
-		...(props.onHover && { whileHover: props.onHover })
+		...(props.onHover && { whileHover: props.onHover }),
+		...(props.onClick && { onClick: props.onClick }),
+		...(props.layoutID && { layoutID: props.layoutID })
 	};
 	return (
 		<motion.div

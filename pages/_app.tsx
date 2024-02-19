@@ -26,7 +26,7 @@ function MyApp({ Component, pageProps, router }) {
 			</Head>
 			<Suspense fallback={<Loading />}>
 				<Layout
-					classname={`${hrdtkn.variable} ${badfennec.variable} overflow-hidden relative h-screen w-full`}>
+					classname={`${hrdtkn.variable} ${badfennec.variable} overflow-hidden relative h-screen w-full select-none`}>
 					<Component {...pageProps} key={router.asPath} />
 				</Layout>
 			</Suspense>

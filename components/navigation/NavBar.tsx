@@ -3,9 +3,8 @@ import Navigations from "../../pages/api/navigations.json";
 import { Transitions, bezierCurved, bezierSharp } from "../libs/Transitions";
 import { Animate, animateParam } from "../libs/Animations";
 import { Fading } from "../libs/Fading";
-import MotionElement from "../libs/MotionElement";
 import MaskElement from "../libs/MaskElement";
-import { navBulletVariants_end, navBulletVariants_start } from "../libs/Masks";
+import { navBullets, rectBar } from "../libs/Masks";
 import { CSSProperties } from "react";
 
 const NavBar = () => {
@@ -28,8 +27,8 @@ const NavBar = () => {
 							} as CSSProperties
 						}
 						childClass="bg-midground w-[var(--sm-w)] h-[20px] md:w-[var(--md-w)] md:h-[40px] relative"
-						startMask={navBulletVariants_start[index]}
-						endMask={navBulletVariants_end[index]}
+						startMask={navBullets[index].start}
+						endMask={navBullets[index].end}
 						transition={new Transitions(0.7, bezierSharp, 1).staggerChildren(
 							0.2,
 							index
@@ -50,8 +49,8 @@ const NavBar = () => {
 					</NavItem>
 					<MaskElement
 						childClass="bg-midground w-[100vw] h-[20px] md:h-[40px] relative"
-						startMask="polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)"
-						endMask="polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)"
+						startMask={rectBar.start}
+						endMask={rectBar.end}
 						transition={new Transitions(3.2, bezierCurved, 1.4).staggerChildren(
 							0.2,
 							index
