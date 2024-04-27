@@ -1,9 +1,12 @@
 [
 	{
 		"name": "Who",
-		"content": "I'm a Front-end developer and UI/UX designer. With a focus on crafting sophisticated web applications, I specialize in working with various popular frameworks and technologies."
+		"content": "I'm a UI/UX Front-end developer and an artist at heart with a love for writing code. I recently graduated from the University of Houston with a Bachelor's in Computer Science. While I can develop web apps with modern, cutting-edge frameworks, my passion lies in web design and predominantly graphic design."
 	},
-	{ "name": "What", "content": "I am proficient in:" },
+	{
+		"name": "What",
+		"content": "I enjoy creating websites by coding them from the ground up."
+	},
 	{ "name": "When", "content": "" },
 	{
 		"name": "Why",

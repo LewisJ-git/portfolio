@@ -5,7 +5,6 @@ import NavBar from "./navigation/NavBar";
 const Layout = (props: containerInterface) => {
 	return (
 		<div className={props.classname}>
-			<NavBar />
 			<AnimatePresence mode="wait">{props.children}</AnimatePresence>
 		</div>
 	);

@@ -13,6 +13,7 @@ interface maskInterface {
 	filterClass?: string;
 	childStyle?: CSSProperties;
 	sharedLayout?: string;
+	forceAnimate?: boolean;
 }
 
 const MaskElement = (props: maskInterface) => {
@@ -24,14 +25,16 @@ const MaskElement = (props: maskInterface) => {
 					new Animate({
 						initialClip: props.startMask,
 						finalClip: props.endMask,
-						transition: props.transition
+						transition: props.transition,
 					}).variant
 				}
 				classname={props.childClass}
 				style={props.childStyle}
-				forceAnimate={true}
+				forceAnimate={props.forceAnimate}
 				animateOnce={true}
-				{...{ ...(props.sharedLayout && { layoutId: props.sharedLayout }) }}
+				{...{
+					...(props.sharedLayout && { layoutId: props.sharedLayout }),
+				}}
 			/>
 			{props.filterClass ? <div className={props.filterClass} /> : <></>}
 		</div>

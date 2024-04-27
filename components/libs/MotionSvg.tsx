@@ -24,7 +24,7 @@ const MotionSvg = (props: svgInterface) => {
 		...(props.animateOnce && { viewport: { once: true } }),
 		...(props.stroke && { stroke: props.stroke }),
 		...(props.strokeWidth && { strokeWidth: `${props.strokeWidth}` }),
-		...(props.strokeLinecap && { strokeLinecap: props.strokeLinecap })
+		...(props.strokeLinecap && { strokeLinecap: props.strokeLinecap }),
 	};
 	return (
 		<motion.svg
@@ -33,23 +33,27 @@ const MotionSvg = (props: svgInterface) => {
 			width="100%"
 			height="100%"
 			viewBox={`0 0 ${props.width} ${props.height}`}
-			preserveAspectRatio={props.aspectRatio ? props.aspectRatio : "none"}>
+			preserveAspectRatio={props.aspectRatio ? props.aspectRatio : "none"}
+		>
 			{props.isGradient ?? (
 				<motion.defs>
 					<motion.linearGradient id="gradient">
 						<motion.stop
 							transition={props.gradTransition}
-							animate={{
-								stopColor: ["#00000000", props.fill]
+							whileInView={{
+								stopColor: ["#00000000", props.fill],
 							}}
 							{...(props.onCompleteFallback && {
-								onAnimationComplete: props.onCompleteFallback
+								onAnimationComplete: props.onCompleteFallback,
 							})}
 						/>
 					</motion.linearGradient>
 				</motion.defs>
 			)}
-			<g fill="url(#gradient)" {...(props.transform && { transform: props.transform })}>
+			<g
+				fill="url(#gradient)"
+				{...(props.transform && { transform: props.transform })}
+			>
 				{props.paths.split(/(?=M)/g).map((path, index) => {
 					return (
 						<motion.path

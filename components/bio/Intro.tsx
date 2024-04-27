@@ -1,43 +1,130 @@
 import Section from "../Section";
-import portrait from "../../public/assets/images/portrait.webp";
-import Image from "next/image";
 import MaskElement from "../libs/MaskElement";
 import { Transitions, bezierCurved, bezierSharp } from "../libs/Transitions";
-import { bioCard } from "../libs/Masks";
-import BioNav from "../navigation/BioNav";
-import { useState } from "react";
+import {
+	bioCard,
+	bioHeading,
+	nameCard,
+	navBullets,
+	rectBar,
+} from "../libs/Masks";
 import BioNavigations from "../../pages/api/bio_navigations.json";
+import MotionElement from "../libs/MotionElement";
+import { Animate } from "../libs/Animations";
+import { Fading } from "../libs/Fading";
+import ScrollElement from "../libs/ScrollElement";
 
 const Intro = () => {
-	const [contentIndex, setContentIndex] = useState<number>(0);
 	return (
 		<Section>
-			<div className="relative flex flex-row w-full justify-end">
-				<div className="lg:w-1/2 w-full relative flex flex-col">
-					<div className="pl-10 pr-5 md:py-5 py-2 relative z-10">
-						<p className="text-background xs:text-xl text-2xl md:text-3xl text-right relative z-10">
-							{BioNavigations[contentIndex].content}
-						</p>
+			<div className="relative w-full">
+				<MotionElement
+					animation={
+						new Animate({
+							initialX: -200,
+							opacity: new Fading(0.4, "fast").opacity,
+							transition: new Transitions(0.7, bezierSharp)
+								.transition,
+						}).variant
+					}
+					forceAnimate={true}
+					animateOnce={true}
+				>
+					<ScrollElement
+						direction="left"
+						classname="font-badfennec text-[3rem] sm:text-[4rem] md:text-[6rem] text-center relative text-accent1 pl-[4rem]"
+					>
+						<h1>inspiration</h1>
+					</ScrollElement>
+				</MotionElement>
+
+				<div className="flex flex-col w-full justify-end items-center">
+					<div className="flex flex-row relative z-[5] gap-3 left-[-10rem] items-center my-[3rem]">
 						<MaskElement
-							parentClass="absolute w-[1700px] h-full top-0 left-0 z-[9]"
+							parentClass="w-[700px] h-[50px] top-[20%] md:top-[20%] left-[95vw] md:left-[50vw] z-[5]"
 							childClass="w-full h-full bg-midground"
-							startMask={bioCard.start}
-							endMask={bioCard.end}
-							transition={new Transitions(1, bezierCurved, 0.6).transition}
+							startMask={navBullets[3].start}
+							endMask={navBullets[3].end}
+							transition={
+								new Transitions(1, bezierCurved, 0.1).transition
+							}
 						/>
+						<MotionElement
+							animation={
+								new Animate({
+									opacity: new Fading(1, "fast").opacity,
+									transition: new Transitions(
+										1.0,
+										bezierSharp,
+										0.2
+									).transition,
+								}).variant
+							}
+							classname="whitespace-nowrap"
+							forceAnimate={true}
+							animateOnce={true}
+						>
+							<h1>Who Am I?</h1>
+						</MotionElement>
 						<MaskElement
-							parentClass="absolute w-[500px] h-[50px] top-[50px] md:top-[30px] right-[-520px] z-[10]"
-							childClass="w-full h-full bg-background"
-							startMask={bioCard.start}
-							endMask={bioCard.end}
-							transition={new Transitions(1.2, bezierCurved, 1).transition}
+							parentClass="w-[70px] h-[50px] top-[20%] md:top-[20%] left-[95vw] md:left-[50vw] z-[5]"
+							childClass="w-full h-full bg-midground"
+							startMask={bioHeading.start}
+							endMask={bioHeading.end}
+							transition={
+								new Transitions(1, bezierCurved, 0.5).transition
+							}
 						/>
 					</div>
-					<BioNav contentIndex={contentIndex} setContentIndex={setContentIndex} />
+					<div className="md:w-1/2 w-full relative flex justify-center items-center ml-[5rem]">
+						<div className="pl-10 pr-5 md:py-10 py-7 relative z-10">
+							<p className="text-background xs:text-xl text-2xl md:text-3xl text-left relative z-10">
+								{BioNavigations[0].content}
+							</p>
+							<MaskElement
+								parentClass="absolute w-full h-full top-0 left-0 z-[9]"
+								childClass="w-full h-full bg-midground"
+								startMask={bioCard.start}
+								endMask={bioCard.end}
+								transition={
+									new Transitions(1, bezierCurved, 0.6)
+										.transition
+								}
+							/>
+						</div>
+						<MaskElement
+							parentClass="absolute w-[700px] h-[50px] top-[20%] md:top-[20%] left-[95vw] md:left-[50vw] z-[5]"
+							childClass="w-full h-full bg-midground"
+							startMask={navBullets[3].start}
+							endMask={navBullets[3].end}
+							transition={
+								new Transitions(1.2, bezierCurved, 1).transition
+							}
+						/>
+					</div>
+					<MotionElement
+						animation={
+							new Animate({
+								initialX: 200,
+								opacity: new Fading(0.4, "slow").opacity,
+								transition: new Transitions(
+									1.0,
+									bezierSharp,
+									0.5
+								).transition,
+							}).variant
+						}
+						forceAnimate={true}
+						animateOnce={true}
+					>
+						<ScrollElement
+							direction="right"
+							classname="font-badfennec text-[3rem] sm:text-[4rem] md:text-[5.5rem] relative text-accent2 text-right"
+						>
+							<h1>passion</h1>
+						</ScrollElement>
+					</MotionElement>
 				</div>
-			</div>
-			<div className="relative right-0 bottom-0 w-full flex justify-center pr-5">
-				<Image src={portrait} alt="portrait" width={319} height={449} />
 			</div>
 		</Section>
 	);

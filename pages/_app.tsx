@@ -9,13 +9,13 @@ import Loading from "../components/Loading";
 const hrdtkn = localFont({
 	src: "../public/fonts/ncof003_hrdtkn_ver1_20/hrdtkn_ver1_20.otf",
 	display: "swap",
-	variable: "--font-hrdtkn"
+	variable: "--font-hrdtkn",
 });
 
 const badfennec = localFont({
 	src: "../public/fonts/ncof005_badfennec_font/BadFennec.otf",
 	display: "swap",
-	variable: "--font-badfennec"
+	variable: "--font-badfennec",
 });
 
 function MyApp({ Component, pageProps, router }) {
@@ -26,7 +26,8 @@ function MyApp({ Component, pageProps, router }) {
 			</Head>
 			<Suspense fallback={<Loading />}>
 				<Layout
-					classname={`${hrdtkn.variable} ${badfennec.variable} overflow-hidden relative h-screen w-full select-none`}>
+					classname={`${hrdtkn.variable} ${badfennec.variable} select-none min-h-screen`}
+				>
 					<Component {...pageProps} key={router.asPath} />
 				</Layout>
 			</Suspense>
