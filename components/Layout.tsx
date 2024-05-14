@@ -1,6 +1,5 @@
 import { AnimatePresence } from "framer-motion";
 import { containerInterface } from "./interfaces";
-import NavBar from "./navigation/NavBar";
 
 const Layout = (props: containerInterface) => {
 	return (

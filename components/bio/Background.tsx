@@ -3,18 +3,37 @@ import Line from "../decorations/Line";
 const Background = () => {
 	return (
 		<>
-			<Line
-				classname="w-[200px] absolute h-[3px] top-[100px] left-[-10px] bg-midground opacity-80 z-[1] rotate-[-15deg] mix-blend-exclusion"
-				delay={1.3}
-			/>
-			<Line
-				classname="w-[500px] absolute h-[3px] top-[90vh] left-[-30px] bg-midground opacity-80 z-[1] rotate-[-15deg] mix-blend-exclusion"
-				delay={1}
-			/>
-			<Line
-				classname="w-[500px] absolute h-[3px] top-[90vh] left-[-30px] bg-midground opacity-80 z-[1] rotate-[-15deg] mix-blend-exclusion"
-				delay={1}
-			/>
+			<div className="absolute top-0 left-0 w-full h-full">
+				<div className="relative w-full h-full left-[-50px]">
+					{Array.from({ length: 15 }, (_, index) => index + 1).map(
+						(i) => (
+							<Line
+								key={i}
+								top={`${Math.random() * 100}%`}
+								width={`${Math.random() * 100 + 5}%`}
+								delay={Math.random() * 1 + 0.5}
+								rotate="-15deg"
+							/>
+						)
+					)}
+				</div>
+			</div>
+
+			<div className="absolute top-0 left-0 w-full h-full">
+				<div className="relative w-full h-full">
+					{Array.from({ length: 12 }, (_, index) => index + 1).map(
+						(i) => (
+							<Line
+								key={i}
+								top={`${Math.random() * 100}%`}
+								width={`${Math.random() * 100 + 5}%`}
+								delay={Math.random() * 1 + 0.5}
+								rotate="75deg"
+							/>
+						)
+					)}
+				</div>
+			</div>
 		</>
 	);
 };

@@ -18,10 +18,14 @@ const Background = () => {
 				animation={
 					new Animate({
 						width: 600,
-						transition: new Transitions(1, bezierCurved, 1).transition
+						transition: new Transitions(1, bezierCurved, 1)
+							.transition,
 					}).variant
-				}>
-				<div className="text-4xl py-2 pl-[50px] relative">Web Developer</div>
+				}
+			>
+				<div className="text-4xl py-2 pl-[50px] relative">
+					Web Developer
+				</div>
 			</MotionElement>
 			<MotionElement
 				classname="w-[800px] absolute h-auto border-b-4 border-midground right-[-200px] opacity-60 rotate-[75deg] top-[50px] bg-background z-[1]"
@@ -30,67 +34,48 @@ const Background = () => {
 				animation={
 					new Animate({
 						width: 600,
-						transition: new Transitions(1, bezierCurved, 0.9).transition
+						transition: new Transitions(1, bezierCurved, 0.9)
+							.transition,
 					}).variant
-				}>
-				<div className="text-4xl p-2 relative text-right">UI/UX Designer</div>
+				}
+			>
+				<div className="text-4xl p-2 relative text-right">
+					UI/UX Designer
+				</div>
 			</MotionElement>
-			<Line
-				classname="w-[200px] absolute h-[3px] top-[100px] left-[-10px] bg-midground opacity-80 z-[1] rotate-[-15deg] mix-blend-exclusion"
-				delay={1.3}
-			/>
-			<Line
-				classname="w-[200vw] absolute h-[3px] top-[-50px] left-[-200px] bg-midground opacity-80 z-[1] rotate-[-15deg] mix-blend-exclusion"
-				delay={1.3}
-			/>
-			<Line
-				classname="w-[200vw] absolute h-[3px] left-[-100px] top-0 bg-midground opacity-80 z-[1] rotate-[-15deg] mix-blend-exclusion"
-				delay={1.1}
-			/>
-			<Line
-				classname="w-[250vh] absolute h-[3px] right-[-100vh] top-0 bg-midground opacity-80 z-[1] rotate-[75deg] mix-blend-exclusion"
-				delay={1.1}
-			/>
-			<Line
-				classname="w-[140vh] absolute h-[3px] right-[30px] bottom-0 bg-midground opacity-80 z-[1] rotate-[-105deg] mix-blend-exclusion"
-				delay={1.2}
-			/>
-			<Line
-				classname="w-[100vh] absolute h-[3px] left-[-200px] bottom-0 bg-midground opacity-80 z-[1] rotate-[-105deg] mix-blend-exclusion"
-				delay={0.9}
-			/>
-			<Line
-				classname="w-[500px] absolute h-[3px] left-[-130px] top-0 bg-midground opacity-80 z-[1] rotate-[-105deg] mix-blend-exclusion"
-				delay={0.9}
-			/>
-			<Line
-				classname="w-[120vh] absolute h-[3px] right-[30px] bottom-0 bg-midground opacity-80 z-[1] rotate-[-105deg] mix-blend-exclusion"
-				delay={1}
-			/>
-			<Line
-				classname="w-[150vh] absolute h-[3px] right-[-200px]  bg-midground opacity-80 z-[1] rotate-[-105deg] mix-blend-exclusion"
-				delay={1.6}
-			/>
-			<Line
-				classname="w-[150vh] absolute h-[3px] right-[-160px]  bg-midground opacity-80 z-[1] rotate-[75deg] mix-blend-exclusion"
-				delay={1.4}
-			/>
-			<Line
-				classname="w-[100vh] absolute h-[3px] bg-midground left-[-100px] top-[200px] opacity-80 z-[1] rotate-[75deg] mix-blend-exclusion"
-				delay={1.2}
-			/>
-			<Line
-				classname="w-[200vh] absolute h-[3px] bg-midground bottom-0 right-[0px] opacity-80 z-[1] rotate-[-105deg] mix-blend-exclusion"
-				delay={1.1}
-			/>
-			<Line
-				classname="w-[200vh] absolute h-[3px] bg-midground bottom-0 right-[10px] opacity-80 z-[1] rotate-[-105deg] mix-blend-exclusion"
-				delay={1.5}
-			/>
-			<Line
-				classname="w-[200vh] absolute h-[3px] bg-midground bottom-0 left-[10px] opacity-80 z-[1] rotate-[-105deg] mix-blend-exclusion"
-				delay={1.3}
-			/>
+
+			<div className="absolute top-0 left-0 w-full h-full">
+				<div className="relative w-full h-full left-[-50px]">
+					{Array.from({ length: 15 }, (_, index) => index + 1).map(
+						(i) => (
+							<Line
+								key={i}
+								top={`${Math.random() * 100}vh`}
+								width={`${Math.random() * 100 + 5}vw`}
+								delay={Math.random() * 1 + 0.5}
+								rotate="-15deg"
+							/>
+						)
+					)}
+				</div>
+			</div>
+
+			<div className="absolute top-0 left-0 w-full h-full">
+				<div className="relative w-full h-full">
+					{Array.from({ length: 12 }, (_, index) => index + 1).map(
+						(i) => (
+							<Line
+								key={i}
+								top={`${Math.random() * 100}vw`}
+								width={`${Math.random() * 100 + 5}vw`}
+								delay={Math.random() * 1 + 0.5}
+								rotate="75deg"
+							/>
+						)
+					)}
+				</div>
+			</div>
+
 			<div className="fixed top-[20%] bottom-0 my-auto rotate-[-105deg] w-[1299px] h-[678px] lg:right-[-50px] right-[-500px]">
 				<MotionSvg
 					paths={NameDesignPath}
@@ -103,20 +88,28 @@ const Background = () => {
 					isGradient={true}
 					forceAnimate={true}
 					animateOnce={true}
-					gradTransition={new Transitions(0.5, bezierSharp).transition}
+					gradTransition={
+						new Transitions(0.5, bezierSharp).transition
+					}
 					animation={
 						new Animate({
 							initialX: -800,
 							opacity: new Fading(1, "fast").opacity,
 							animatePath: true,
-							transition: new Transitions(1, bezierCurved, 1).transition
+							transition: new Transitions(1, bezierCurved, 1)
+								.transition,
 						}).variant
 					}
 					transform="translate(0.000000,452.000000) scale(0.100000,-0.100000)"
 				/>
 			</div>
 			<div className="absolute bottom-0 right-0 z-[13]">
-				<Image src={corner_icon} alt="corner-icon" width={35} height={35} />
+				<Image
+					src={corner_icon}
+					alt="corner-icon"
+					width={35}
+					height={35}
+				/>
 			</div>
 		</>
 	);

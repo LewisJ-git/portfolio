@@ -1,15 +1,17 @@
 [
 	{
-		"name": "Who",
-		"content": "I'm a UI/UX Front-end developer and an artist at heart with a love for writing code. I recently graduated from the University of Houston with a Bachelor's in Computer Science. While I can develop web apps with modern, cutting-edge frameworks, my passion lies in web design and predominantly graphic design."
+		"name": "Who Am I?",
+		"content": "I'm a UI/UX Front-end developer and an artist at heart with a love for writing code. I recently graduated from the University of Houston with a Bachelor's in Computer Science. My passion lies in designing and developing websites with modern, cutting-edge frameworks."
 	},
 	{
-		"name": "What",
-		"content": "I enjoy creating websites by coding them from the ground up."
+		"name": "Technologies I'm most proficient with",
+		"content": ""
 	},
-	{ "name": "When", "content": "" },
 	{
-		"name": "Why",
-		"content": "What drives me? The intersection of art and functionality. I believe that every website tells a story, and my goal is to bring your brand's narrative to life through captivating design. The thrill of turning concepts into interactive realities is what keeps me fueled."
+		"name": "What drives me?",
+		"content": [
+			"I find solace in the intersection of art and functionality. My belief is that every website tells a story, and my goal is to bring your brand's narrative to life through captivating design. The thrill of turning concepts into interactive realities is what keeps me fueled.",
+			"Additionally, I love researching and studying graphic design in my free time to help advance my career as a web developer. I'm constantly seeking new knowledge and techniques to improve my abilities and create even more amazing designs. Let's work together to create a website that truly represents your brand and captivates your audience!"
+		]
 	}
 ]

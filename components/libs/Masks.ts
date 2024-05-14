@@ -42,11 +42,6 @@ export const footingCard: maskInterface = {
 	end: "polygon(0% 74%, 0% 100%, 100% 100%, 100% 8%, 92% 0%, 0% 0%, 0% 29.21%, 7.69% 34.65%, 7.69% 67.31%)",
 };
 
-export const bioCard: maskInterface = {
-	start: "polygon(100% 0, 100% 0%, 96% 0%, 0 0%, 0 0)",
-	end: "polygon(100% 0, 100% 80%, 96% 100%, 0 100%, 0 0)",
-};
-
 export const bioHeading: maskInterface = {
 	start: "polygon(0% 80%, 0% 20%, 0% 0%, 0% 0%, 0% 100%, 0% 100%, 0% 84.49%, 0% 100%, 0% 100%)",
 	end: "polygon(100% 80%, 100% 20%, 85% 0%, 0% 0%, 0% 100%, 54.29% 100%, 63.83% 84.49%, 74.93% 100%, 85% 100%)",

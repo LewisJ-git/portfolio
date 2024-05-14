@@ -8,54 +8,57 @@ import MotionSvg from "../libs/MotionSvg";
 import { NameDesignPath } from "../../public/assets/icons/SVGPaths";
 import { Animate } from "../libs/Animations";
 import { Fading } from "../libs/Fading";
-import ScrollElement from "../libs/ScrollElement";
 import MotionElement from "../libs/MotionElement";
 
 const Portrait = () => {
 	return (
 		<Section>
-			<div className="flex flex-row">
+			<div className="relative flex md:flex-row flex-col">
 				<div className="relative my-[5rem] w-full">
 					<MotionElement
 						animation={
 							new Animate({
-								initialClip: rectBar.start,
-								finalClip: rectBar.end,
+								opacity: new Fading(1, "slow").opacity,
 								transition: new Transitions(
-									1.2,
+									1,
 									bezierCurved,
-									1.4
+									0.4
 								).transition,
 							}).variant
 						}
 						animateOnce={true}
-						classname="relative z-[10] flex flex-row"
+						classname="relative z-[10]"
 					>
 						<Image
 							src={portrait}
 							alt="portrait"
-							className="sm:w-[400px] w-[300px] p-[2rem] md:p-[3rem]"
+							className="w-[500px] p-[3rem] relative z-[2]"
 						/>
-						<h1 className="font-barcode text-background text-[2rem] md:text-[4rem] rotate-[-90deg] whitespace-nowrap mt-[1rem] relative md:left-[2.5rem] left-[4.5rem] sm:left-[8.5rem]">
-							Self-portrait
-						</h1>
-					</MotionElement>
 
-					<MaskElement
-						parentClass="absolute w-[350px] sm:w-[450px] md:w-[500px] h-full top-0 left-0 z-[1]"
-						childClass="h-full bg-midground"
-						startMask={nameCard.start}
-						endMask={nameCard.end}
-						forceAnimate={false}
-						transition={
-							new Transitions(1, bezierCurved, 0.6).transition
-						}
-					/>
+						<MaskElement
+							parentClass="absolute w-[550px] h-full top-0 left-0 z-[1]"
+							childClass="h-full bg-midground"
+							startMask={nameCard.start}
+							endMask={nameCard.end}
+							forceAnimate={false}
+							transition={
+								new Transitions(1, bezierCurved, 0.6).transition
+							}
+						/>
+					</MotionElement>
 				</div>
-				<div className="relative">
-					<ScrollElement
-						direction="left"
-						classname="fixed w-[1299px] h-[678px] md:ml-[-500px] ml-[-1000px] py-10"
+				<div className="absolute top-0 md:relative w-full h-full">
+					<MotionElement
+						scrollMove={{ scrollAxis: "x", range: [500, 0] }}
+						classname="absolute left-[-300px] w-[1299px] h-[678px] md:ml-[-500px] ml-[-1000px] py-10"
+						animation={
+							new Animate({
+								initialX: -800,
+								transition: new Transitions(0.7, bezierSharp)
+									.transition,
+							}).variant
+						}
+						animateOnce={true}
 					>
 						<MotionSvg
 							paths={NameDesignPath}
@@ -72,8 +75,6 @@ const Portrait = () => {
 							}
 							animation={
 								new Animate({
-									initialX: -800,
-									opacity: new Fading(1, "fast").opacity,
 									animatePath: true,
 									transition: new Transitions(
 										1,
@@ -84,7 +85,7 @@ const Portrait = () => {
 							}
 							transform="translate(0.000000,452.000000) scale(0.100000,-0.100000)"
 						/>
-					</ScrollElement>
+					</MotionElement>
 				</div>
 			</div>
 		</Section>

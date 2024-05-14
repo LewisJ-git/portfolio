@@ -7,9 +7,9 @@ export default function Home() {
 	return (
 		<div className="overflow-hidden relative w-full h-screen">
 			<NavBar />
-			<Background />
 			<Name />
 			<Footing />
+			<Background />
 		</div>
 	);
 }
