@@ -1,6 +1,6 @@
 import Section from "../Section";
 import BioNavigations from "../../pages/api/bio_navigations.json";
-import github_logo from "../../public/assets/icons/others/github-logo-alt.svg";
+import git_logo from "../../public/assets/icons/others/git-logo.svg";
 import figma_logo from "../../public/assets/icons/others/figma-logo.svg";
 import framer_logo from "../../public/assets/icons/others/framer-logo-alt.svg";
 import javascript_logo from "../../public/assets/icons/others/javascript-logo.svg";
@@ -28,7 +28,7 @@ const Skills = () => {
 		tailwind_logo,
 		framer_logo,
 		figma_logo,
-		github_logo,
+		git_logo,
 	];
 	return (
 		<>

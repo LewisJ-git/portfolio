@@ -13,7 +13,7 @@ interface lineArgs {
 const Line = (props: lineArgs) => {
 	return (
 		<MotionElement
-			classname="h-[5px] bg-midground opacity-10 absolute"
+			classname="h-[5px] bg-midground opacity-10 absolute z-[1]"
 			style={{
 				top: props.top,
 				width: props.width,

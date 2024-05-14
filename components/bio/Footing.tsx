@@ -14,7 +14,7 @@ const Footing = () => {
 				filter: "invert(100%) opacity(0.5)",
 			}}
 		>
-			<Link href={Navigations[3].url}>
+			<Link href={Navigations[2].url}>
 				<MotionElement
 					animation={
 						new Animate({

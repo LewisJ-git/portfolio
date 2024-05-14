@@ -32,7 +32,7 @@ const Portrait = () => {
 						<Image
 							src={portrait}
 							alt="portrait"
-							className="w-[500px] p-[3rem] relative z-[2]"
+							className="w-[500px] p-[3rem] relative z-[10]"
 						/>
 
 						<MaskElement

@@ -1,4 +1,6 @@
 import Line from "../decorations/Line";
+import Image from "next/image";
+import corner_icon from "../../public/assets/icons/personal/corner-alt.svg";
 
 const Background = () => {
 	return (
@@ -33,6 +35,14 @@ const Background = () => {
 						)
 					)}
 				</div>
+			</div>
+			<div className="absolute bottom-0 right-0 z-[13]">
+				<Image
+					src={corner_icon}
+					alt="corner-icon"
+					width={35}
+					height={35}
+				/>
 			</div>
 		</>
 	);
